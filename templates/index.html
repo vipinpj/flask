@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> 
+  
+</head>
+<style>
+  .t1{
+    background-color:#4d6600;
+    height:100%;
+    width:100%;
+  }
+  .t3{
+    height:30px;
+    width:200px;
+    background-color:transparent;
+   
+
+  }
+  .bt1{
+    height:30px;
+    width:100px;
+    margin-left:220px;
+    border-radius:10%;
+    background-color:#4d6600;
+  }
+  .bt1:hover{
+    color:white;
+    cursor:pointer;
+    background-color:black;
+  
+  }
+  .b1{
+    background-color:white;
+    height:400px;
+    width:40%;
+    margin-left:350px;
+    margin-top:100px;
+    padding:30px;
+  }
+</style>
+
+<body class="t1">
+
+ 
+  <div class="b1">
+	<center><h1>Predict Salary Analysis</h1></center>
+    <br>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <div class="t2">
+    <center>
+      <input  class="t3" type="text" name="e1" placeholder="Experience" required="required" />
+      <br>
+      <br>
+      <br>
+    <input class="t3" type="text" name="t1" placeholder="Test Score" required="required" />
+    <br>
+    <br>
+    <br>
+		<input class="t3" type="text" name="I1" placeholder="Interview Score" required="required" />
+    <br>
+    <br>
+    <br>
+    
+    </center>
+        <button type="submit" class="bt1">Predict</button>
+    </form>
+  </div>
+   <br>
+   <center>
+   {{ prediction_text }}
+   </center>
+ </div>
+ </body>
+</html>
+
+  
